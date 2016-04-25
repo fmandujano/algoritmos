@@ -56,15 +56,22 @@ int primos(int n)
 	return freq;
 }
 
-int main()
+int main(int argc, char** argv)
 {
 	clock_t t;
 	int f;
-
 	listaDePrimos = NULL;
 
+	if (argc < 2)
+	{
+		puts("Error: falta argumento");
+		puts("Uso del programa: primos.exe n donde n es el rango de enteros que se buscaran los primos");
+		system("PAUSE");
+		return 0;
+	}
+	
 	t = clock();
-	f = primos(10000000);
+	f = primos( atoi(argv[1])  );
 	std::cout << "Primos entre 0 y n: " << f << std::endl;
 
 	t = clock() - t;
