@@ -71,8 +71,9 @@ int main(int argc, char** argv)
 	}
 	
 	t = clock();
-	f = primos( atoi(argv[1])  );
-	std::cout << "Primos entre 0 y n: " << f << std::endl;
+	int n = atoi(argv[1]);
+	f = primos( n  );
+	std::cout << "Primos entre 0 y " << n << ": " << f << std::endl;
 
 	t = clock() - t;
 
